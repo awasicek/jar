@@ -12,11 +12,16 @@ class JarsController < ApplicationController
   end
 
   def create
-    @jar = current_user.jars.new(params.require(:jar).permit(:name))
-    if @jar.save
-      redirect_to jars_path
+    if logged_in?
+      @jar = current_user.jars.new(params.require(:jar).permit(:name))
+      if @jar.save
+        redirect_to jars_path
+      else
+        render :new
+      end
     else
-      render :new
+      flash[:failure] = "Please login before creating a new jar."
+      redirect_to new_session_path
     end
   end
 

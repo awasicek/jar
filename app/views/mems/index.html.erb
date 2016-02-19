@@ -2,7 +2,9 @@
 
 <% @mems.reverse.each do |u| %>
 <h3> <%= u.body %> </h3>
-<h5>Created by: <%= u.user.name %>
+<h5>Part of Jar: <%= u.jar.name %></h5>
+<h5>Written by: <%= u.jar.user.name %></h5>
+
 <br>
 <hr>
 <br>
