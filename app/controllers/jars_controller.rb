@@ -4,6 +4,7 @@ class JarsController < ApplicationController
   end
 
   def show
+    @jar = Jar.find(params[:id])
   end
 
   def new

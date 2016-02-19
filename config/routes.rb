@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 # JARS ROUTES
   get 'jars/index' => 'jars#index', as: :jars
 
-  get 'jars/show'
+  get 'jars/:id' => 'jars#show', as: :jar
 
   get 'jars/new'
 
