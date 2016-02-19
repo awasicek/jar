@@ -8,9 +8,16 @@ class JarsController < ApplicationController
   end
 
   def new
+    @jar = Jar.new
   end
 
   def create
+    @jar = Jar.new(params.require(:jar).permit(:name))
+    if @jar.save
+      redirect_to jars_path
+    else
+      render :new
+    end
   end
 
   def edit

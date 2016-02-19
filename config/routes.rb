@@ -18,11 +18,11 @@ Rails.application.routes.draw do
 # JARS ROUTES
   get 'jars/index' => 'jars#index', as: :jars
 
+  get 'jars/new' => 'jars#new', as: :new_jar
+
   get 'jars/:id' => 'jars#show', as: :jar
 
-  get 'jars/new'
-
-  get 'jars/create'
+  post 'jars/index' => 'jars#create', as: :create_jar
 
   get 'jars/edit'
 
