@@ -24,9 +24,9 @@ Rails.application.routes.draw do
 
   post 'jars/index' => 'jars#create', as: :create_jar
 
-  get 'jars/edit'
+  get 'jars/:id/edit' => 'jars#edit', as: :edit_jar
 
-  get 'jars/update'
+  patch 'jars/:id' => 'jars#update'
 
   get 'jars/destroy'
 

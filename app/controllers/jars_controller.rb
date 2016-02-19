@@ -21,9 +21,16 @@ class JarsController < ApplicationController
   end
 
   def edit
+    @jar = Jar.find(params[:id])
   end
 
   def update
+    @jar = Jar.find(params[:id])
+    if @jar.update_attributes(params.require(:jar).permit(:name))
+      redirect_to jars_path
+    else
+      render :edit
+    end
   end
 
   def destroy
