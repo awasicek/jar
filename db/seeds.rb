@@ -13,3 +13,6 @@ andrea.jars.create({name: "Our Daughter"})
 andrea.jars.create({name: "Our Son"})
 bob.jars.create({name: "Senior Class 2016"})
 jimmy.jars.create({name: "Jimmy and Fred's Wedding"})
+
+# # SEED mems
+# bob.mems.create({body:"John hooked up with Sarah behind the bleachers", date:"Sept 2015"})

@@ -4,6 +4,7 @@ class MemsController < ApplicationController
   end
 
   def show
+    @mem = Mem.find(params[:id])
   end
 
   def new

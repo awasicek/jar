@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 # MEMORY ROUTES
   get 'mems/index' => 'mems#index', as: :mems
 
-  get 'mems/show'
+  get 'mems/:id' => 'mems#show', as: :mem
 
   get 'mems/new'
 
