@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219193134) do
+ActiveRecord::Schema.define(version: 20160219195109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160219193134) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
     t.integer  "jar_id"
+    t.integer  "user_id"
   end
 
   add_index "mems", ["jar_id"], name: "index_mems_on_jar_id", using: :btree
