@@ -1,5 +1,6 @@
 class JarsController < ApplicationController
   def index
+    @jars = Jar.all
   end
 
   def show
