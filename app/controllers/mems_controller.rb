@@ -1,5 +1,6 @@
 class MemsController < ApplicationController
   def index
+    @mems = Mem.all
   end
 
   def show

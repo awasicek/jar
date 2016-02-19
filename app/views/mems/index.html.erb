@@ -1,2 +1,9 @@
-<h1>Mems#index</h1>
-<p>Find me in app/views/mems/index.html.erb</p>
+<h1>Index of Mems</h1>
+
+<% @mems.reverse.each do |u| %>
+<h3> <%= u.name %> </h3>
+<h5>Created by: <%= u.user.name %>
+<br>
+<hr>
+<br>
+<% end %>

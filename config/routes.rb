@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   delete 'jars/:id' => 'jars#destroy'
 
 # MEMORY ROUTES
-  get 'mems/index'
+  get 'mems/index' => 'mems#index', as: :mems
 
   get 'mems/show'
 
