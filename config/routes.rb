@@ -49,7 +49,7 @@ Rails.application.routes.draw do
 
   patch 'mems/:id' => 'mems#update'
 
-  get 'mems/destroy'
+  delete 'mems/:id' => 'mems#destroy'
 
 
 end

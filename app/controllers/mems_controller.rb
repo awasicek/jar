@@ -34,5 +34,8 @@ class MemsController < ApplicationController
   end
 
   def destroy
+    @mem = Mem.find(params[:id])
+    @mem.destroy
+    redirect_to mems_path
   end
 end
