@@ -45,9 +45,9 @@ Rails.application.routes.draw do
 
   post 'mems/index' => 'mems#create', as: :create_mem
 
-  get 'mems/edit'
+  get 'mems/:id/edit' => 'mems#edit', as: :edit_mem
 
-  get 'mems/update'
+  patch 'mems/:id' => 'mems#update'
 
   get 'mems/destroy'
 

@@ -21,9 +21,16 @@ class MemsController < ApplicationController
   end
 
   def edit
+    @mem = Mem.find(params[:id])
   end
 
   def update
+    @mem = Mem.find(params[:id])
+    if @mem.update_attributes(params.require(:mem).permit(:body, :date))
+      redirect_to mems_path
+    else
+      render :edit
+    end
   end
 
   def destroy
