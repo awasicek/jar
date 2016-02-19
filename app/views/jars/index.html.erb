@@ -1,2 +1,9 @@
-<h1>Jars#index</h1>
-<p>Find me in app/views/jars/index.html.erb</p>
+<h1>Index of Jars</h1>
+
+<% @jars.reverse.each do |u| %>
+<h3> <%= u.name %> </h3>
+<h5>Created by: <%= u.user.name %>
+<br>
+<hr>
+<br>
+<% end %>

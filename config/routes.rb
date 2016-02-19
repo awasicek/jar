@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   delete 'users/:id' => 'users#destroy'
 
 # JARS ROUTES
-  get 'jars/index'
+  get 'jars/index' => 'jars#index', as: :jars
 
   get 'jars/show'
 
