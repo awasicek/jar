@@ -8,7 +8,12 @@ class JarsController < ApplicationController
   end
 
   def show_my_jars
-    @jar = current_user.jars
+    if logged_in?
+      @jar = current_user.jars
+    else
+      flash[:failure] = "Please login before viewing your jars."
+      redirect_to new_session_path
+    end
   end
 
   def new
