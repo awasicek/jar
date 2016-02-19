@@ -10,11 +10,46 @@
 </head>
 <body>
 
-  <% if logged_in? %>
-    <%= link_to 'Logout', logout_path %>
-  <% else %>
-    <%= link_to "Login", new_session_path %>
-  <% end %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="/users/index">Users</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/jars/index">Jars<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">My Jars</a></li>
+            <li><a href="/jars/new">New Jar</a></li>
+            <li><a href="#">Other Jars</a></li>
+            <li><a href="/jars/index">All Jars</a></li>
+          </ul>
+        </li>
+        <li><a href="/mems/index">Mems</a></li>
+        <li>  <% if logged_in? %>
+                <%= link_to 'Account', user_path(current_user) %>
+              <% else %>
+                <%= link_to "Sign Up", new_user_path %>
+              <% end %>
+        </li>
+        <li>  <% if logged_in? %>
+            <%= link_to 'Logout', logout_path %>
+          <% else %>
+            <%= link_to "Login", new_session_path %>
+          <% end %></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Profile', users_path %></li>
+            <li><a href="#">Login/Logout</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+<br>
+<br>
+
 
   <% if flash[:success] %>
   <div class="alert alert-success"><%= flash[:success] %></div>

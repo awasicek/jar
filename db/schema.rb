@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219175644) do
+ActiveRecord::Schema.define(version: 20160219193134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20160219175644) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "mem_id"
   end
 
+  add_index "jars", ["mem_id"], name: "index_jars_on_mem_id", using: :btree
   add_index "jars", ["user_id"], name: "index_jars_on_user_id", using: :btree
 
   create_table "mems", force: :cascade do |t|
@@ -31,8 +33,10 @@ ActiveRecord::Schema.define(version: 20160219175644) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "jar_id"
   end
 
+  add_index "mems", ["jar_id"], name: "index_mems_on_jar_id", using: :btree
   add_index "mems", ["user_id"], name: "index_mems_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -44,6 +48,8 @@ ActiveRecord::Schema.define(version: 20160219175644) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "jars", "mems"
   add_foreign_key "jars", "users"
+  add_foreign_key "mems", "jars"
   add_foreign_key "mems", "users"
 end

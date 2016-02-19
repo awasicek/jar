@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   has_many :jars, dependent: :destroy
 
   #user relationship to memories
-  has_many :mems, dependent: :destroy
+  has_many :mems, through: :jars
 
 end
