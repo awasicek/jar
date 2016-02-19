@@ -8,7 +8,7 @@ class JarsController < ApplicationController
   end
 
   def show_my_jars
-    @jar = Jar.find(params[:id])
+    @jar = current_user.jars
   end
 
   def new
