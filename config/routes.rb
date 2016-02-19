@@ -3,17 +3,17 @@ Rails.application.routes.draw do
 # USER ROUTES
   get '/' => 'users#index'
 
-  get 'users/show'
+  get "users/new" => "users#new", as: :new_user
 
-  get 'users/new'
+  get 'users/:id' => 'users#show', as: :user
 
-  get 'users/create'
+  post 'users/' => 'users#create'
 
-  get 'users/edit'
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
 
-  get 'users/update'
+  patch 'users/:id' => 'users#update'
 
-  get 'users/destroy'
+  delete 'users/:id' => 'users#destroy'
 
 # JARS ROUTES
   get 'jars/index'
