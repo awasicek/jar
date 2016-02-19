@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # SESSIONS ROUTES
+
+  get '/logout' => 'sessions#destroy', as: :logout
+
+  resources :sessions, only: [:new, :create]
+
 # USER ROUTES
   get 'users/index' => 'users#index', as: :users
 
