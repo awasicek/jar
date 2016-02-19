@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
-  # SESSIONS ROUTES
+  get '/' => 'homes#index', as: :home
 
+  get 'homes/:id' => 'homes#show', as: :user_home
+
+# HOMEPAGE ROUTES
+
+
+# SESSIONS ROUTES
   get '/logout' => 'sessions#destroy', as: :logout
 
   resources :sessions, only: [:new, :create]
