@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   patch 'jars/:id' => 'jars#update'
 
-  get 'jars/destroy'
+  delete 'jars/:id' => 'jars#destroy'
 
 # MEMORY ROUTES
   get 'mems/index'

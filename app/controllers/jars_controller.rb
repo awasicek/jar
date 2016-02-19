@@ -34,5 +34,8 @@ class JarsController < ApplicationController
   end
 
   def destroy
+    @jar = Jar.find(params[:id])
+    @jar.destroy
+    redirect_to jars_path
   end
 end
