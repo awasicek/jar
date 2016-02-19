@@ -1,4 +1,5 @@
 # DELETE EXISTING JAR AND USER DATA
+Jar.destroy_all
 User.destroy_all
 
 # SEED USERS

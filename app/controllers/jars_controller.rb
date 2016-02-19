@@ -12,7 +12,7 @@ class JarsController < ApplicationController
   end
 
   def create
-    @jar = Jar.new(params.require(:jar).permit(:name))
+    @jar = current_user.jars.new(params.require(:jar).permit(:name))
     if @jar.save
       redirect_to jars_path
     else
