@@ -1,1 +1,12 @@
 <h1><%= @jar.name %></h1>
+<br>
+<br>
+<br>
+
+
+
+<% @jar.mems.each do |u| %>
+
+<h5>Memory: <%= u.body %>
+
+<% end %>
