@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   get 'jars/new' => 'jars#new', as: :new_jar
 
-  get 'jars/show_my_jars' => 'jars#show_my_jars', as: :show_my_jars
+  get 'jars/personal' => 'jars#show_my_jars', as: :show_my_jars
 
   get 'jars/:id' => 'jars#show', as: :jar
 
