@@ -16,7 +16,7 @@ class MemsController < ApplicationController
     @mem = @jar.mems.new(params.require(:mem).permit(:body, :date, :user_id))
     @mem.user_id = current_user.id
     if @mem.save
-      redirect_to mems_path
+      redirect_to jar_path(@mem.jar_id)
     else
       render :new
     end

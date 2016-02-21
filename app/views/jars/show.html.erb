@@ -1,6 +1,8 @@
 <h1><%= @jar.name %></h1>
 <br>
 <br>
+<img src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
+
 <br>
 
 <% if logged_in? %>
@@ -11,5 +13,7 @@
 <% @jar.mems.each do |u| %>
 
 <h5>Memory: <%= u.body %></h5>
+<h7>Date: <%= u.date %></h7>
+<hr>
 
 <% end %>
