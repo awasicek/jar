@@ -3,7 +3,9 @@
 <br>
 <br>
 
+<% if logged_in? %>
 <%= link_to "Put a new memory in this jar.", new_mem_path(@jar) %>
+<%end%>
 <br>
 
 <% @jar.mems.each do |u| %>
