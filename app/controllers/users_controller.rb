@@ -14,7 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params.require(:user).permit(:username, :name, :password, :email))
     if @user.save
-      redirect_to users_path
+      flash[:success] = "Thank you for registering. Please log in to access your account."
+      redirect_to new_session_path
     else
       flash[:failure] = "That username and/or email is already registered."
       redirect_to new_user_path
