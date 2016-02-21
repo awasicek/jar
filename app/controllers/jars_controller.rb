@@ -24,7 +24,7 @@ class JarsController < ApplicationController
     if logged_in?
       @jar = current_user.jars.new(params.require(:jar).permit(:name))
       if @jar.save
-        redirect_to jars_path
+        redirect_to show_my_jars_path
       else
         render :new
       end

@@ -16,7 +16,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path
     else
-      render :new
+      flash[:failure] = "That username and/or email is already registered."
+      redirect_to new_user_path
     end
   end
 
