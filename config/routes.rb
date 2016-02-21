@@ -43,19 +43,19 @@ Rails.application.routes.draw do
   delete 'jars/:id' => 'jars#destroy'
 
 # MEMORY ROUTES
-  get 'jars/jar_id/mems/index' => 'mems#index', as: :mems
+  get 'jars/:jar_id/mems/index' => 'mems#index', as: :mems
 
-  get 'jars/jar_id/mems/new' => 'mems#new', as: :new_mem
+  get 'jars/:jar_id/mems/new' => 'mems#new', as: :new_mem
 
-  get 'jars/jar_id/mems/:id' => 'mems#show', as: :mem
+  get 'jars/:jar_id/mems/:id' => 'mems#show', as: :mem
 
-  post 'jars/jar_id/mems/index' => 'mems#create', as: :create_mem
+  post 'jars/:jar_id/mems/index' => 'mems#create', as: :create_mem
 
-  get 'jars/jar_id/mems/:id/edit' => 'mems#edit', as: :edit_mem
+  get 'jars/:jar_id/mems/:id/edit' => 'mems#edit', as: :edit_mem
 
-  patch 'jars/jar_id/mems/:id' => 'mems#update'
+  patch 'jars/:jar_id/mems/:id' => 'mems#update'
 
-  delete 'jars/jar_id/mems/:id' => 'mems#destroy'
+  delete 'jars/:jar_id/mems/:id' => 'mems#destroy'
 
 
 end

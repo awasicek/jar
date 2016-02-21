@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<%= link_to "Put a new memory in this jar.", new_mem_path %>
+<%= link_to "Put a new memory in this jar.", new_mem_path(@jar) %>
 <br>
 
 <% @jar.mems.each do |u| %>
