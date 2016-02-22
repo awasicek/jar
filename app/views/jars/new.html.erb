@@ -1,2 +1,12 @@
-<h1>Jars#new</h1>
-<p>Find me in app/views/jars/new.html.erb</p>
+<h1>Create a new Jar.</h1>
+
+<%= form_for @jar do |f| %>
+
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <%= f.submit "Create!" %>
+
+<% end %>

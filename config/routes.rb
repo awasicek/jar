@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+# HOMEPAGE ROUTES
+  get '/' => 'homes#index', as: :home
+
+  get 'homes/:id' => 'homes#show', as: :user_home
+
+# SESSIONS ROUTES
+  get '/logout' => 'sessions#destroy', as: :logout
+
+  resources :sessions, only: [:new, :create]
+
 # USER ROUTES
   get 'users/index' => 'users#index', as: :users
 
@@ -18,32 +28,34 @@ Rails.application.routes.draw do
 # JARS ROUTES
   get 'jars/index' => 'jars#index', as: :jars
 
-  get 'jars/show'
+  get 'jars/new' => 'jars#new', as: :new_jar
 
-  get 'jars/new'
+  get 'jars/personal' => 'jars#show_my_jars', as: :show_my_jars
 
-  get 'jars/create'
+  get 'jars/:id' => 'jars#show', as: :jar
 
-  get 'jars/edit'
+  post 'jars/index' => 'jars#create', as: :create_jar
 
-  get 'jars/update'
+  get 'jars/:id/edit' => 'jars#edit', as: :edit_jar
 
-  get 'jars/destroy'
+  patch 'jars/:id' => 'jars#update'
+
+  delete 'jars/:id' => 'jars#destroy'
 
 # MEMORY ROUTES
-  get 'mems/index'
+  get 'jars/:jar_id/mems/index' => 'mems#index', as: :mems
 
-  get 'mems/show'
+  get 'jars/:jar_id/mems/new' => 'mems#new', as: :new_mem
 
-  get 'mems/new'
+  get 'jars/:jar_id/mems/:id' => 'mems#show', as: :mem
 
-  get 'mems/create'
+  post 'jars/:jar_id/mems/index' => 'mems#create', as: :create_mem
 
-  get 'mems/edit'
+  get 'jars/:jar_id/mems/:id/edit' => 'mems#edit', as: :edit_mem
 
-  get 'mems/update'
+  patch 'jars/:jar_id/mems/:id' => 'mems#update'
 
-  get 'mems/destroy'
+  delete 'jars/:jar_id/mems/:id' => 'mems#destroy'
 
 
 end

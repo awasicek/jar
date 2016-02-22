@@ -1,2 +1,19 @@
-<h1>Jars#show</h1>
-<p>Find me in app/views/jars/show.html.erb</p>
+<h1><%= @jar.name %></h1>
+<br>
+<br>
+<img src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
+
+<br>
+
+<% if logged_in? %>
+<%= link_to "Put a new memory in this jar.", new_mem_path(@jar) %>
+<%end%>
+<br>
+
+<% @jar.mems.each do |u| %>
+
+<h5>Memory: <%= u.body %></h5>
+<h7>Date: <%= u.date %></h7>
+<hr>
+
+<% end %>

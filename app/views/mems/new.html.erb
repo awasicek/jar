@@ -1,2 +1,16 @@
-<h1>Mems#new</h1>
-<p>Find me in app/views/mems/new.html.erb</p>
+<h1>Create a new Memory.</h1>
+
+<%= form_for @mem do |f| %>
+
+    <div>
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+    </div>
+    <div>
+        <%= f.label :date %>
+        <%= f.text_field :date %>
+    </div>
+
+    <%= f.submit "Create!" %>
+
+<% end %>

@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   #user relationship to jar
   has_many :jars, dependent: :destroy
 
+  #user relationship to memories
+  has_many :mems, through: :jars
+
 end
