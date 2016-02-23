@@ -14,6 +14,8 @@
 
 <h5>Memory: <%= u.body %></h5>
 <h7>Date: <%= u.date %></h7>
+
+<%= image_tag u.photo.url(:thumb) unless u.photo_file_name == nil%>
 <hr>
 
 <% end %>
