@@ -19,12 +19,18 @@ class ApplicationController < ActionController::Base
   end
 
   def can_view?
+    ##returns true if the current user is in that jar's viewer list
+    !!Jar.find(params[:id]).viewers.find_by(user_id: current_user)
   end
 
   def can_contribute?
+    ##returns true if the current user is in that jar's contributor list
+    !!Jar.find(params[:id]).contributors.find_by(user_id: current_user)
   end
 
   def is_creator?
+    ##returns true if the current user is in that jar's creator
+    current_user == Jar.find(params[:id]).user
   end
 
 end

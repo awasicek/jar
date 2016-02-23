@@ -4,14 +4,11 @@ class JarsController < ApplicationController
   end
 
   def show
-    if current_user.id == Jar.find(params[:id]).user_id
+    if is_creator? || can_view?
       @jar = Jar.find(params[:id])
-    elsif Jar.find(params[:id]).viewers.find_by(user_id: current_user) == nil
+    else
       flash[:failure] = "You do not have viewer permission for that jar."
       redirect_to home_path
-    elsif current_user.id == Jar.find(params[:id]).viewers.find_by(user_id: current_user).user_id
-      # Jar.find(67).viewers.find_by(user_id: 71).user_id
-      @jar = Jar.find(params[:id])
     end
   end
 
