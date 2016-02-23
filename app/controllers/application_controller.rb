@@ -18,4 +18,13 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path unless logged_in?
   end
 
+  def can_view?
+  end
+
+  def can_contribute?
+  end
+
+  def is_creator?
+  end
+
 end
