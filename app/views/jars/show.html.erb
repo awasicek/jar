@@ -6,6 +6,10 @@
 <br>
 
 <% if logged_in? %>
+<%= link_to "Add a contributor to this jar.", new_contributor_path(@jar) %>
+<%end%>
+<br>
+<% if logged_in? %>
 <%= link_to "Put a new memory in this jar.", new_mem_path(@jar) %>
 <%end%>
 <br>

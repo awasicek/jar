@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'contributors/index' => 'contributors#index', as: :contributors
+
+  get 'contributors/show'
+
+  get 'jars/:jar_id/contributors/new' => 'contributors#new', as: :new_contributor
+
+  post 'jars/:jar_id/contributors' => 'contributors#create', as: :create_contributor
+
+  get 'contributors/edit'
+
+  get 'contributors/update'
+
+  get 'contributors/destroy'
+
+  resources :viewers
+
 # HOMEPAGE ROUTES
   get '/' => 'homes#index', as: :home
 
