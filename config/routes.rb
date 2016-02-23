@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+# CONTRIBUTOR ROUTES
   get 'contributors/index' => 'contributors#index', as: :contributors
 
   get 'contributors/show'
@@ -14,7 +15,21 @@ Rails.application.routes.draw do
 
   get 'contributors/destroy'
 
-  resources :viewers
+# VIEWER ROUTES
+  get 'viewers/index' => 'viewers#index', as: :viewers
+
+  get 'viewers/show'
+
+  get 'jars/:jar_id/viewers/new' => 'viewers#new', as: :new_viewer
+
+  post 'jars/:jar_id/viewers' => 'viewers#create', as: :create_viewer
+
+  get 'viewers/edit'
+
+  get 'viewers/update'
+
+  get 'viewers/destroy'
+
 
 # HOMEPAGE ROUTES
   get '/' => 'homes#index', as: :home
