@@ -10,7 +10,8 @@ class ContributorsController < ApplicationController
   end
 
   def create
-    @contributor = Contributor.new(params.require(:contributor).permit(:user_id, :jar_id))
+    @jar = Jar.find(params[:jar_id])
+    @contributor = @jar.contributors.new(params.require(:contributor).permit(:user_id, :jar_id))
     if @contributor.save
       flash[:success] = "You successfully added a contributor."
       redirect_to users_path
