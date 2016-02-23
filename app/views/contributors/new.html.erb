@@ -1,10 +1,10 @@
 <h1>Add a contributor.</h1>
 
-<%= form_for @contributor, :url => create_contributor_path do |f| %>
+<%= form_for @user, :url => create_contributor_path do |f| %>
 
     <div>
-        <%= f.label :user_id %>
-        <%= f.number_field :user_id %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
     </div>
 
     <%= f.submit "Create!" %>

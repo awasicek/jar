@@ -7,13 +7,15 @@ class ContributorsController < ApplicationController
 
   def new
     @contributor = Contributor.new
+    @user = User.new
   end
 
   def create
     @jar = Jar.find(params[:jar_id])
-    @contributor = @jar.contributors.new(params.require(:contributor).permit(:user_id, :jar_id))
+    @user = User.find_by({username: params[:user][:username]})
+    @contributor = @jar.contributors.new({user: @user, jar: @jar})
     if @contributor.save
-      flash[:success] = "You successfully added a contributor."
+      flash[:success] = "You successfully added #{@user.username} as a contributor."
       redirect_to users_path
     else
       flash[:failure] = "Failed to add contributor."
