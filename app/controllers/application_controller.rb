@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :authorize
+  helper_method :current_user, :logged_in?, :authorize, :can_view?, :can_contribute?, :is_creator?
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_creator?
-    ##returns true if the current user is in that jar's creator
+    ##returns true if the current user is that jar's creator
     current_user == Jar.find(params[:id]).user
   end
 

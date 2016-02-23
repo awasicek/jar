@@ -5,23 +5,27 @@
 
 <br>
 
-<% if logged_in? %>
+<% if is_creator? %>
 <%= link_to "Add a contributor to this jar.", new_contributor_path(@jar) %>
-<%end%>
 <br>
-<% if logged_in? %>
+<%end%>
+
+<% if is_creator? %>
 <%= link_to "Add a viewer to this jar.", new_viewer_path(@jar) %>
-<%end%>
 <br>
-<% if logged_in? %>
+<%end%>
+
+<% if is_creator? || can_contribute? %>
 <%= link_to "Put a new memory in this jar.", new_mem_path(@jar) %>
-<%end%>
 <br>
+<%end%>
 
-<% @jar.mems.each do |u| %>
 
-<h5>Memory: <%= u.body %></h5>
-<h7>Date: <%= u.date %></h7>
+<% @mem.each do |u| %>
+<h4>Memory: <%= u.body %></h4>
+<h5>Date: <%= u.date %></h5>
+<h6>Added by: <%= u.jar.user.name %></h6>
+
 
 <%= image_tag u.photo.url(:thumb) unless u.photo_file_name == nil%>
 <hr>
