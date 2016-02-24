@@ -4,15 +4,45 @@
 <img src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
 
 <br>
-<!-- Create memory button -->
-<button id="create-mem" type="button" name="button">New Memory</button>
-<br>
+<!-- Button trigger modal -->
+<% if is_creator? || can_contribute? %>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Add Memory
+</button>
+<%end%>
+<!-- Memory form/modal begin-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Memory</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @mem, url: create_mem_path(@jar) do |f| %>
 
-<!-- Memory form begin-->
-<div id="memory-form" style="background-color: yellow; height: 200px; width: 200px; display: none">
+            <div>
+                <%= f.label :body %>
+                <%= f.text_area :body %>
+            </div>
+            <div>
+                <%= f.label :date %>
+                <%= f.text_field :date %>
+            </div>
 
-
+            <div>
+                <%= f.label :photo, 'Optional: Attach a photo to this memory.' %>
+                <%= f.file_field :photo %><br>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Create!" %>
+      </div>
+    </div>
+  </div>
 </div>
+    <% end %>
 <!-- Memory form end-->
 
 <br>
@@ -37,25 +67,10 @@
 <%end%>
 
 
-<% @mem.each do |u| %>
+<% @jar.mems.each do |u| %>
 <h4>Memory: <%= u.body %></h4>
 <h5>Date: <%= u.date %></h5>
 <h6>Added by: <%= u.jar.user.name %></h6>
-
-
 <%= image_tag u.photo.url(:thumb) unless u.photo_file_name == nil%>
 <hr>
-
 <% end %>
-
-
-<script type="text/javascript">
-  var createMemButton = $('#create-mem')
-  var memoryForm = $('#memory-form')
-
-  createMemButton.click(function(){
-    memoryForm.css("display", "block")
-    console.log("clicking create memory button")
-  })
-
-</script>

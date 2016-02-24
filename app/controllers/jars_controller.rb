@@ -6,7 +6,7 @@ class JarsController < ApplicationController
   def show
     if is_creator? || can_view? || can_contribute? || is_public?
       @jar = Jar.find(params[:id])
-      @mem = @jar.mems
+      @mem = @jar.mems.new
     else
       flash[:failure] = "You do not have permissions for that jar."
       redirect_to home_path
