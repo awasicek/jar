@@ -17,3 +17,13 @@
     <%= f.submit "Submit these changes!" %>
 
 <% end %>
+<br>
+<% if is_creator? %>
+<%= link_to "Add a contributor to this jar.", new_contributor_path(@jar) %>
+<br>
+<%end%>
+
+<% if is_creator? %>
+<%= link_to "Add a viewer to this jar.", new_viewer_path(@jar) %>
+<br>
+<%end%>

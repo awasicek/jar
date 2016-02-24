@@ -37,7 +37,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= f.submit "Create!" %>
+        <input type="submit" name="commit" value="Add Memory" class="btn btn-default">
       </div>
     </div>
   </div>
@@ -47,24 +47,13 @@
 
 <br>
 <% if is_creator? %>
-<%= link_to "Edit this jar's privacy settings and set which users can view or contribute to this jar.", edit_jar_path(@jar) %>
+<%= link_to "Edit Jar and Settings.", edit_jar_path(@jar) %>
 <br>
 <%end%>
+<br>
+<hr>
+<br>
 
-<% if is_creator? %>
-<%= link_to "Add a contributor to this jar.", new_contributor_path(@jar) %>
-<br>
-<%end%>
-
-<% if is_creator? %>
-<%= link_to "Add a viewer to this jar.", new_viewer_path(@jar) %>
-<br>
-<%end%>
-
-<% if is_creator? || can_contribute? %>
-<%= link_to "Put a new memory in this jar.", new_mem_path(@jar) %>
-<br>
-<%end%>
 
 
 <% @jar.mems.each do |u| %>
