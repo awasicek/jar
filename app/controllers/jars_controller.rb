@@ -4,7 +4,7 @@ class JarsController < ApplicationController
   end
 
   def show
-    if is_creator? || can_view? || can_contribute?
+    if is_creator? || can_view? || can_contribute? || is_public?
       @jar = Jar.find(params[:id])
       @mem = @jar.mems
     else

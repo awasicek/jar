@@ -15,15 +15,15 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">Home</a></li>
-        <li><a href="/users/index">Users</a></li>
+        <!-- <li><a href="/users/index">Users</a></li> -->
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/jars/index">Jars<span class="caret"></span></a>
           <ul class="dropdown-menu">
 
             <li><%= link_to 'My Jars', show_my_jars_path%></a></li>
 
             <li><a href="/jars/new">New Jar</a></li>
-            <li><a href="#">Other Jars</a></li>
-            <li><a href="/jars/index">All Jars</a></li>
+            <li><a href="#">Friends' Jars</a></li>
+            <li><a href="/jars/index">Public Jars</a></li>
           </ul>
         </li>
         <li>  <% if logged_in? %>
