@@ -22,6 +22,16 @@ class JarsController < ApplicationController
     end
   end
 
+  def show_friends_jars
+    if logged_in?
+      @viewable = Viewer.where(user_id: current_user)
+      @contributable = Contributor.where(user_id: current_user)
+    else
+      flash[:failure] = "Please login before viewing your friends' jars."
+      redirect_to new_session_path
+    end
+  end
+
   def new
     if logged_in?
       @jar = Jar.new

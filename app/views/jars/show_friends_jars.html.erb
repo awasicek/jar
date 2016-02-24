@@ -1,0 +1,33 @@
+<br>
+<br>
+<h1> Jars you can view! </h1>
+<% @viewable.each do |v| %>
+<br>
+<div class="row">
+  <div class="col-md-1">
+      <img class="img-responsive" src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
+  </div>
+  <div class="col-md-3">
+    <h3> <%= link_to v.jar.name, jar_path(v) %> </h3>
+  </div>
+  <div class="col-md-8"></div>
+</div>
+<br>
+<hr>
+<% end %>
+<br>
+<h1> Jars you can contribute to and view! </h1>
+<% @contributable.each do |v| %>
+<br>
+<div class="row">
+  <div class="col-md-1">
+      <img class="img-responsive" src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
+  </div>
+  <div class="col-md-3">
+    <h3> <%= link_to v.jar.name, jar_path(v) %> </h3>
+  </div>
+  <div class="col-md-8"></div>
+</div>
+<br>
+<hr>
+<% end %>

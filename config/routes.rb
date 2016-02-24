@@ -63,6 +63,8 @@ Rails.application.routes.draw do
 
   get 'jars/personal' => 'jars#show_my_jars', as: :show_my_jars
 
+  get 'jars/friends' => 'jars#show_friends_jars', as: :show_friends_jars
+
   get 'jars/:id' => 'jars#show', as: :jar
 
   post 'jars/index' => 'jars#create', as: :create_jar
