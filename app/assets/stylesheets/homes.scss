@@ -4,3 +4,32 @@
 html,body {
     height:100%;
 }
+
+#jar-logo-box {
+  background-color: rgb(72, 217, 99)
+}
+
+.box {
+    width: 13.8%;
+    padding-bottom: 13.8%;
+    background: #c1c1c1;
+    color: #FFF;
+    display: inline-block;
+    position: relative;
+}
+
+.innerContent {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    background: #66F;
+}
+
+#wrap {
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: -10px;
+
+}
