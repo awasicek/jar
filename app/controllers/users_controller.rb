@@ -29,7 +29,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params.require(:user).permit(:username, :name, :password, :email))
-      redirect_to users_path
+      flash[:success] = "Account successfully edited."
+      redirect_to user_path
     else
       render :edit
     end

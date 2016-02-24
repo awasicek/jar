@@ -4,4 +4,6 @@
 <br>
 <br>
 <br>
+<%= link_to "Edit Account and Settings.", edit_user_path(@user) %>
+<br>
 <%= link_to "Delete account.", user_path, method: :delete, data: { confirm: "Are you sure you want to delete your account and make the app very very sad?"} %>
