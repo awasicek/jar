@@ -6,7 +6,7 @@ html,body {
 }
 
 #jar-logo-box {
-  background-color: rgb(72, 217, 99)
+  background-color: #c1c1c1;
 }
 
 .box {
@@ -25,6 +25,23 @@ html,body {
     top: 2px;
     bottom: 2px;
     background: #66F;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-family: "Georgia";
+}
+
+.innerTextContent {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 40%;
+    bottom: 2px;
+    background: #66F;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-family: "Georgia";
 }
 
 #wrap {
