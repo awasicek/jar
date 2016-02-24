@@ -14,7 +14,13 @@
     <div class="container">
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
+        <li>
+        <% if !logged_in? %>
+                <%= link_to 'Home', home_path %>
+              <% else %>
+                <%= link_to 'Home', user_home_path %>
+              <% end %>
+        </li>
         <!-- <li><a href="/users/index">Users</a></li> -->
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/jars/index">Jars<span class="caret"></span></a>
           <ul class="dropdown-menu">

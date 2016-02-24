@@ -8,7 +8,7 @@
 <% if is_creator? %>
 <%= link_to "Edit this jar's privacy settings and set which users can view or contribute to this jar.", edit_jar_path(@jar) %>
 <br>
-<%end%> 
+<%end%>
 
 <% if is_creator? %>
 <%= link_to "Add a contributor to this jar.", new_contributor_path(@jar) %>

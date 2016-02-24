@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 # HOMEPAGE ROUTES
   get '/' => 'homes#index', as: :home
 
-  get 'homes/:id' => 'homes#show', as: :user_home
+  get '/welcome' => 'homes#show', as: :user_home
 
 # SESSIONS ROUTES
   get '/logout' => 'sessions#destroy', as: :logout

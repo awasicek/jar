@@ -8,7 +8,7 @@
       <img class="img-responsive" src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
   </div>
   <div class="col-md-3">
-    <h3> <%= link_to v.jar.name, jar_path(v) %> </h3>
+    <h3> <%= link_to v.jar.name, jar_path(v.jar.id) %> </h3>
   </div>
   <div class="col-md-8"></div>
 </div>
@@ -17,14 +17,14 @@
 <% end %>
 <br>
 <h1> Jars you can contribute to and view! </h1>
-<% @contributable.each do |v| %>
+<% @contributable.each do |c| %>
 <br>
 <div class="row">
   <div class="col-md-1">
       <img class="img-responsive" src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
   </div>
   <div class="col-md-3">
-    <h3> <%= link_to v.jar.name, jar_path(v) %> </h3>
+    <h3> <%= link_to c.jar.name, jar_path(c.jar.id) %> </h3>
   </div>
   <div class="col-md-8"></div>
 </div>
