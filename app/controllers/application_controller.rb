@@ -33,4 +33,9 @@ class ApplicationController < ActionController::Base
     current_user == Jar.find(params[:id]).user
   end
 
+  def is_public?
+    ##returns true if the current jar is viewable by the public
+    Jar.find(params[:id]).publicview
+  end
+
 end

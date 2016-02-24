@@ -1,6 +1,6 @@
 class JarsController < ApplicationController
   def index
-    @jars = Jar.all
+    @jars = Jar.where :publicview => true
   end
 
   def show
@@ -23,7 +23,12 @@ class JarsController < ApplicationController
   end
 
   def new
-    @jar = Jar.new
+    if logged_in?
+      @jar = Jar.new
+    else
+      flash[:failure] = "Please login before creating a jar."
+      redirect_to new_session_path
+    end
   end
 
   def create
@@ -41,12 +46,17 @@ class JarsController < ApplicationController
   end
 
   def edit
-    @jar = Jar.find(params[:id])
+    if is_creator?
+      @jar = Jar.find(params[:id])
+    else
+      flash[:failure] = "Only creators can edit their jars."
+      redirect_to home_path
+    end
   end
 
   def update
     @jar = Jar.find(params[:id])
-    if @jar.update_attributes(params.require(:jar).permit(:name))
+    if @jar.update_attributes(params.require(:jar).permit(:name, :publicview))
       redirect_to jars_path
     else
       render :edit

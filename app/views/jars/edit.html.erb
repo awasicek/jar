@@ -2,12 +2,18 @@
 
 <%= form_for @jar do |f| %>
 
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </div>
+<div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+</div>
 
-
+<br>
+<%= f.radio_button(:publicview, true) %>
+<%= f.label(:publicview, "Set this jar as viewable by the public.") %>
+<br>
+<%= f.radio_button(:publicview, false) %>
+<%= f.label(:publicview, "Set this viewer as private (only viewable to the creator and users the creator sets as viewers or contributors).") %>
+<br>
     <%= f.submit "Submit these changes!" %>
 
 <% end %>
