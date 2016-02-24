@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223013100) do
+ActiveRecord::Schema.define(version: 20160223234407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20160223013100) do
 
   create_table "jars", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
     t.integer  "mem_id"
+    t.boolean  "publicview", default: false
   end
 
   add_index "jars", ["mem_id"], name: "index_jars_on_mem_id", using: :btree
@@ -52,6 +53,14 @@ ActiveRecord::Schema.define(version: 20160223013100) do
 
   add_index "mems", ["jar_id"], name: "index_mems_on_jar_id", using: :btree
   add_index "mems", ["user_id"], name: "index_mems_on_user_id", using: :btree
+
+  create_table "publics", force: :cascade do |t|
+    t.integer  "jar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "publics", ["jar_id"], name: "index_publics_on_jar_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -78,6 +87,7 @@ ActiveRecord::Schema.define(version: 20160223013100) do
   add_foreign_key "jars", "users"
   add_foreign_key "mems", "jars"
   add_foreign_key "mems", "users"
+  add_foreign_key "publics", "jars"
   add_foreign_key "viewers", "jars"
   add_foreign_key "viewers", "users"
 end
