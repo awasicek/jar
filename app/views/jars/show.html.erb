@@ -57,7 +57,7 @@
 
 
 
-<% @jar.mems.each do |u| %>
+<% @jar.mems.reverse.each do |u| %>
 <h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Memory: <%= u.body %></h4>
 <h5 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Date: <%= u.date %></h5>
 <h6 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Added by: <%= u.jar.user.name %></h6>
