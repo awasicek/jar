@@ -1,3 +1,4 @@
+
 # <img src="http://i.imgur.com/fWj5G5x.png" alt="jar pic" height="35px">  the Jar
 
 The Jar is an app for storing your memories.  It is based on a physical jar that my wife and I created when our daughter was born.  Every so often we put an index card with 2-3 lines describing something that our daughter did that we want to remember or share with her when she is older.  This project is a virtual recreation of this concept.
