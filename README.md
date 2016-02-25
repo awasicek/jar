@@ -46,6 +46,6 @@ As a player, I want some positive feedback for when I win.
 
 
 
-<img src="http://i.imgur.com/NhHw1mD.png" alt="wireframe" height="200px">
+<img src="http://i.imgur.com/NhHw1mD.png" alt="wireframe" height="300px">
 
 
