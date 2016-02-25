@@ -61,6 +61,6 @@
 <h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Memory: <%= u.body %></h4>
 <h5 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Date: <%= u.date %></h5>
 <h6 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Added by: <%= u.jar.user.name %></h6>
-<%= image_tag u.photo.url(:thumb), :style => "margin-left: 20px;" unless u.photo_file_name == nil%>
+<%= image_tag u.photo.url(:medium), :style => "margin-left: 20px;" unless u.photo_file_name == nil%>
 <hr>
 <% end %>
