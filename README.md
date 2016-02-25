@@ -62,3 +62,6 @@ As a user, I want to share my jars with the people that I choose.
 
 
 <img src="http://i.imgur.com/NhHw1mD.png" alt="wireframe" height="300px">
+
+###Bugs
+* There is an issue with turbolinks where the submit button for new memories does not function on page:load (i.e., it will not submit the memory when going to the page from the nav bar link); this can be solved by refreshing the page of the jar to which you want to add a memory.
