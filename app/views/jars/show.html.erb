@@ -47,8 +47,9 @@
 <!-- Memory form end-->
 
 <br>
+<br>
 <% if is_creator? %>
-<%= link_to "Edit Jar and Settings.", edit_jar_path(@jar), :style => "margin-left: 20px;"  %>
+<%= link_to "Edit Jar and Settings.", edit_jar_path(@jar), :style => "margin-left: 20px;", :class => 'btn btn-info'%>
 <br>
 <%end%>
 <br>

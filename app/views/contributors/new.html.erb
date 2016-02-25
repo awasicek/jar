@@ -1,12 +1,12 @@
-<h1>Add a contributor.</h1>
+<h1 style="font-family: Gloria Hallelujah; margin-left: 20px">Add a contributor to <%=Jar.find(params[:jar_id]).name%>.</h1>
 
 <%= form_for @user, :url => create_contributor_path do |f| %>
 
     <div>
-        <%= f.label :username %>
+        <%= f.label :username, "Contributor's Username:", :style => "margin-left: 20px;" %>
         <%= f.text_field :username %>
     </div>
 
-    <%= f.submit "Create!" %>
+    <%= f.submit "Add as contributor", :style => "margin-left: 20px;", :class => "btn btn-success" %>
 
 <% end %>
