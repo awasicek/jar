@@ -13,7 +13,7 @@ class MemsController < ApplicationController
 
   def create
     @jar = Jar.find(params[:jar_id])
-    @mem = @jar.mems.new(params.require(:mem).permit(:body, :date, :user_id))
+    @mem = @jar.mems.new(params.require(:mem).permit(:body, :date, :user_id, :photo))
     @mem.user_id = current_user.id
     if @mem.save
       redirect_to jar_path(@mem.jar_id)

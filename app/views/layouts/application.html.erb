@@ -5,25 +5,31 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+  <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+w
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-    <nav>
+    <nav style="font-family: 'Gloria Hallelujah'; font-size: 16px">
+      <a href="/"><img style="height: 45px; display: inline; position: relative; right: 20px" class="img-responsive" src="/images/logo-jar.png" alt="logo" /></a><p style="display: inline; color: rgb(204, 204, 204); font-size: 18px; top: 5px; position: relative">the Jar</p>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
-        <li><a href="/users/index">Users</a></li>
+        <li>
+        <% if !logged_in? %>
+                <%= link_to 'Home', home_path %>
+              <% else %>
+                <%= link_to 'Home', user_home_path %>
+              <% end %>
+        </li>
+        <!-- <li><a href="/users/index">Users</a></li> -->
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/jars/index">Jars<span class="caret"></span></a>
           <ul class="dropdown-menu">
 
             <li><%= link_to 'My Jars', show_my_jars_path%></a></li>
 
             <li><a href="/jars/new">New Jar</a></li>
-            <li><a href="#">Other Jars</a></li>
-            <li><a href="/jars/index">All Jars</a></li>
+            <li><a href="/jars/friends">Friends' Jars</a></li>
+            <li><a href="/jars/index">Public Jars</a></li>
           </ul>
         </li>
         <li>  <% if logged_in? %>

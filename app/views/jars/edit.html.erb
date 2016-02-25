@@ -1,13 +1,29 @@
-<h1>Edit your Jar.</h1>
+<h1 style= "font-family: 'Gloria Hallelujah'">Edit your Jar.</h1>
 
 <%= form_for @jar do |f| %>
 
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </div>
+<div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+</div>
 
-
+<br>
+<%= f.radio_button(:publicview, true) %>
+<%= f.label(:publicview, "Set this jar as viewable by the public.") %>
+<br>
+<%= f.radio_button(:publicview, false) %>
+<%= f.label(:publicview, "Set this viewer as private (only viewable to the creator and users the creator sets as viewers or contributors).") %>
+<br>
     <%= f.submit "Submit these changes!" %>
 
 <% end %>
+<br>
+<% if is_creator? %>
+<%= link_to "Add a contributor to this jar.", new_contributor_path(@jar) %>
+<br>
+<%end%>
+
+<% if is_creator? %>
+<%= link_to "Add a viewer to this jar.", new_viewer_path(@jar) %>
+<br>
+<%end%>

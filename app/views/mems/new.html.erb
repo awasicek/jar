@@ -11,6 +11,11 @@
         <%= f.text_field :date %>
     </div>
 
+    <div>
+        <%= f.label :photo, 'Optional: Attach a photo to this memory.' %>
+        <%= f.file_field :photo %><br>
+    </div>
+
     <%= f.submit "Create!" %>
 
 <% end %>

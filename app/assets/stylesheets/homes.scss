@@ -1,3 +1,57 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html,body {
+    height:100%;
+}
+
+#jar-logo-box {
+  background-color: #c1c1c1;
+}
+
+.box {
+    width: 13.8%;
+    padding-bottom: 13.8%;
+    background: #c1c1c1;
+    color: #FFF;
+    display: inline-block;
+    position: relative;
+}
+
+.innerContent {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    background: #66F;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.innerTextContent {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 40%;
+    bottom: 2px;
+    background: #66F;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-family: 'Gloria Hallelujah', cursive;
+    overflow: hidden;
+}
+
+#welcome-display {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+#wrap {
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: -10px;
+
+}

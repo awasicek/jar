@@ -1,9 +1,40 @@
 Rails.application.routes.draw do
 
+# CONTRIBUTOR ROUTES
+  get 'contributors/index' => 'contributors#index', as: :contributors
+
+  get 'contributors/show'
+
+  get 'jars/:jar_id/contributors/new' => 'contributors#new', as: :new_contributor
+
+  post 'jars/:jar_id/contributors' => 'contributors#create', as: :create_contributor
+
+  get 'contributors/edit'
+
+  get 'contributors/update'
+
+  get 'contributors/destroy'
+
+# VIEWER ROUTES
+  get 'viewers/index' => 'viewers#index', as: :viewers
+
+  get 'viewers/show'
+
+  get 'jars/:jar_id/viewers/new' => 'viewers#new', as: :new_viewer
+
+  post 'jars/:jar_id/viewers' => 'viewers#create', as: :create_viewer
+
+  get 'viewers/edit'
+
+  get 'viewers/update'
+
+  get 'viewers/destroy'
+
+
 # HOMEPAGE ROUTES
   get '/' => 'homes#index', as: :home
 
-  get 'homes/:id' => 'homes#show', as: :user_home
+  get '/welcome' => 'homes#show', as: :user_home
 
 # SESSIONS ROUTES
   get '/logout' => 'sessions#destroy', as: :logout
@@ -31,6 +62,8 @@ Rails.application.routes.draw do
   get 'jars/new' => 'jars#new', as: :new_jar
 
   get 'jars/personal' => 'jars#show_my_jars', as: :show_my_jars
+
+  get 'jars/friends' => 'jars#show_friends_jars', as: :show_friends_jars
 
   get 'jars/:id' => 'jars#show', as: :jar
 

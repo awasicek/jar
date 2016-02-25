@@ -1,19 +1,66 @@
-<h1><%= @jar.name %></h1>
+<h1 style= "font-family: 'Gloria Hallelujah'"><%= @jar.name %></h1>
 <br>
 <br>
 <img src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
 
 <br>
+<!-- Button trigger modal -->
+<% if is_creator? || can_contribute? %>
+<button id="add-mem" type="button" class="btn btn-primary btn-lg" style= "font-family: 'Gloria Hallelujah'">
+  Add Memory
+</button>
+<%end%>
+<!-- Memory form/modal begin-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Memory</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag create_mem_path(@jar) do %>
 
-<% if logged_in? %>
-<%= link_to "Put a new memory in this jar.", new_mem_path(@jar) %>
+            <div>
+                <%= label_tag 'mem[body]', "Body" %>
+                <%= text_area_tag 'mem[body]' %>
+            </div>
+            <div>
+                <%= label_tag 'mem[date]', "Date" %>
+                <%= text_field_tag 'mem[date]' %>
+            </div>
+
+            <div>
+                <%= label_tag 'mem[photo]', 'Optional: Attach a photo to this memory.' %>
+                <%= file_field_tag 'mem[photo]' %><br>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- <input type="submit" name="commit" value="Add Memory" class="btn btn-default"> -->
+        <%= submit_tag 'Add Memory' %>
+      </div>
+    </div>
+  </div>
+</div>
+    <% end %>
+<!-- Memory form end-->
+
+<br>
+<% if is_creator? %>
+<%= link_to "Edit Jar and Settings.", edit_jar_path(@jar) %>
+<br>
 <%end%>
 <br>
+<hr>
+<br>
+
+
 
 <% @jar.mems.each do |u| %>
-
-<h5>Memory: <%= u.body %></h5>
-<h7>Date: <%= u.date %></h7>
+<h4 style= "font-family: 'Gloria Hallelujah'">Memory: <%= u.body %></h4>
+<h5 style= "font-family: 'Gloria Hallelujah'">Date: <%= u.date %></h5>
+<h6 style= "font-family: 'Gloria Hallelujah'">Added by: <%= u.jar.user.name %></h6>
+<%= image_tag u.photo.url(:thumb) unless u.photo_file_name == nil%>
 <hr>
-
 <% end %>
