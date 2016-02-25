@@ -16,7 +16,7 @@ class ViewersController < ApplicationController
     @viewer = @jar.viewers.new({user: @user, jar: @jar})
     if @viewer.save
       flash[:success] = "You successfully added #{@user.username} as a viewer."
-      redirect_to users_path
+      redirect_to show_my_jars_path
     else
       flash[:failure] = "Failed to add viewer."
       redirect_to new_viewer_path

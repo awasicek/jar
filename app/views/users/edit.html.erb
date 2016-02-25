@@ -1,24 +1,24 @@
-<h1 style= "font-family: 'Gloria Hallelujah'">Edit your account.</h1>
+<h1 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Edit your account.</h1>
 
 <%= form_for @user do |f| %>
 
     <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.label :name, :style => "margin-left: 20px;" %>
+        <%= f.text_field :name, :style => "margin-left: 20px;" %>
     </div>
     <div>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
+        <%= f.label :email, :style => "margin-left: 20px;" %>
+        <%= f.text_field :email, :style => "margin-left: 20px;" %>
     </div>
     <div>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
+        <%= f.label :username, :style => "margin-left: 20px;" %>
+        <%= f.text_field :username, :style => "margin-left: 20px;" %>
     </div>
     <div>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.label :password, :style => "margin-left: 20px;" %>
+        <%= f.password_field :password, :style => "margin-left: 20px;" %>
     </div>
 
-    <%= f.submit "Submit these changes!" %>
+    <%= f.submit "Submit these changes!", :style => "margin-left: 20px;" %>
 
 <% end %>

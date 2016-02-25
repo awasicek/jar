@@ -1,9 +1,9 @@
-<h2 style= "font-family: 'Gloria Hallelujah'"> <%= @user.name %> </h2>
-<h4 style= "font-family: 'Gloria Hallelujah'"> <%= @user.username %> </h4>
-<h4 style= "font-family: 'Gloria Hallelujah'"> <%= @user.email %> </h4>
+<h2 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> <%= @user.name %> </h2>
+<h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> <%= @user.username %> </h4>
+<h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> <%= @user.email %> </h4>
 <br>
 <br>
 <br>
-<%= link_to "Edit Account and Settings.", edit_user_path(@user) %>
+<%= link_to "Edit Account and Settings.", edit_user_path(@user), :style => "margin-left: 20px;" %>
 <br>
-<%= link_to "Delete account.", user_path, method: :delete, data: { confirm: "Are you sure you want to delete your account and make the app very very sad?"} %>
+<%= link_to "Delete account.", user_path, method: :delete, data: { confirm: "Are you sure you want to delete your account?"}, :style => "margin-left: 20px;" %>
