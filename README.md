@@ -8,6 +8,8 @@ Users can set their jars as private or public.  They can also add other users as
 
 ##Example Uses:
 
+* College friends create a jar for memories about their spring break vacation.
+
 * Parents create a jar about their child that they put memories in each time their child does something cute.  
 
 * A couple creates a jar for their wedding and invites all of their guests to contribute memories of the wedding to the jar.
