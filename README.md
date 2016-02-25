@@ -1,5 +1,4 @@
-# <img src="http://i.imgur.com/fWj5G5x.png" alt="jar pic" height="125px"> the Jar 
----
+# <img src="http://i.imgur.com/fWj5G5x.png" alt="jar pic" height="50px"> the Jar 
 
 Try to get the longest/biggest series of hexes connected to your home piece!
 
