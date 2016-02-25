@@ -1,17 +1,17 @@
-<h1 style= "font-family: 'Gloria Hallelujah'">View Public Jars</h1>
+<h1 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">View Public Jars</h1>
 
 <% @jars.reverse.each do |u| %>
 
 <div class="row">
   <div class="col-md-1">
-      <img class="img-responsive" src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
+      <img style="margin-left: 20px" class="img-responsive" src="/images/empty-jar-placeholder1.png" alt="empty jar placeholder" />
   </div>
   <div class="col-md-3">
-    <h3> <%= link_to u.name, jar_path(u) %> </h3>
+    <h3 style="margin-left: 20px"> <%= link_to u.name, jar_path(u) %> </h3>
   </div>
   <div class="col-md-8"></div>
 </div>
-<h5 style= "font-family: 'Gloria Hallelujah'">Created by: <%= u.user.name %>
+<h5 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Created by: <%= u.user.name %>
 <br>
 <hr>
 <br>
