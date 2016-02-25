@@ -2,6 +2,7 @@
 
 ![Jar Logo](http://i.imgur.com/fWj5G5x.png) 
 ---
+<img src="http://i.imgur.com/fWj5G5x.png" alt="alt text" height="200px">
 
 Try to get the longest/biggest series of hexes connected to your home piece!
 
