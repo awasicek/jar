@@ -6,7 +6,7 @@
 <br>
 <!-- Button trigger modal -->
 <% if is_creator? || can_contribute? %>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style= "font-family: 'Gloria Hallelujah'">
+<button id="add-mem" type="button" class="btn btn-primary btn-lg" style= "font-family: 'Gloria Hallelujah'">
   Add Memory
 </button>
 <%end%>
@@ -19,25 +19,26 @@
         <h4 class="modal-title" id="myModalLabel">Create Memory</h4>
       </div>
       <div class="modal-body">
-        <%= form_for @mem, url: create_mem_path(@jar) do |f| %>
+        <%= form_tag create_mem_path(@jar) do %>
 
             <div>
-                <%= f.label :body %>
-                <%= f.text_area :body, cols: 40, rows: 5 %>
+                <%= label_tag 'mem[body]', "Body" %>
+                <%= text_area_tag 'mem[body]' %>
             </div>
             <div>
-                <%= f.label :date %>
-                <%= f.text_field :date %>
+                <%= label_tag 'mem[date]', "Date" %>
+                <%= text_field_tag 'mem[date]' %>
             </div>
 
             <div>
-                <%= f.label :photo, 'Optional: Attach a photo to this memory.' %>
-                <%= f.file_field :photo %><br>
+                <%= label_tag 'mem[photo]', 'Optional: Attach a photo to this memory.' %>
+                <%= file_field_tag 'mem[photo]' %><br>
             </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input type="submit" name="commit" value="Add Memory" class="btn btn-default">
+        <!-- <input type="submit" name="commit" value="Add Memory" class="btn btn-default"> -->
+        <%= submit_tag 'Add Memory' %>
       </div>
     </div>
   </div>
@@ -57,9 +58,9 @@
 
 
 <% @jar.mems.each do |u| %>
-<h4>Memory: <%= u.body %></h4>
-<h5>Date: <%= u.date %></h5>
-<h6>Added by: <%= u.jar.user.name %></h6>
+<h4 style= "font-family: 'Gloria Hallelujah'">Memory: <%= u.body %></h4>
+<h5 style= "font-family: 'Gloria Hallelujah'">Date: <%= u.date %></h5>
+<h6 style= "font-family: 'Gloria Hallelujah'">Added by: <%= u.jar.user.name %></h6>
 <%= image_tag u.photo.url(:thumb) unless u.photo_file_name == nil%>
 <hr>
 <% end %>
