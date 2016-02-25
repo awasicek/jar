@@ -30,11 +30,15 @@ Sign up for an account on the site and then login.  Next, create a jar -- or sev
 Ready to make a jar and add some memories? Visit [the Jar](https://fierce-taiga-61470.herokuapp.com/) to get started! Have fun!
 
 ##User Stories
+As a user, I want a fun and intuitive way to store memories about certain subjects using my computer or mobile device.
+
 As a user, I want to attach pictures to my memories.
 
 As a user, I want the jars to feel like physical objects and not just a place to save photos and lines of text.
 
-As a user, I want to share my jars with the people that I choose.
+As a user, I want to share my jars with only the people that I choose.
+
+As a user, I want to enable select friends to contribute to certain jars that I create.
 
 ##Future Implementations
 * Improve styling and animation of memories so it feels more like the user is filling out an actual note card and then it goes in the jar.  A jar's image should update periodically based on the number of memories in it to simulate it filling up.
