@@ -1,8 +1,7 @@
 # the Jar
 
-![Jar Logo](http://i.imgur.com/fWj5G5x.png) 
+<img src="http://i.imgur.com/fWj5G5x.png" alt="jar pic" height="125px">
 ---
-<img src="http://i.imgur.com/fWj5G5x.png" alt="alt text" height="200px">
 
 Try to get the longest/biggest series of hexes connected to your home piece!
 
@@ -10,7 +9,8 @@ Try to block your opponent or wall them off with your own pieces!
 
 The object of the game is to have the largest set of contiguous colored hexes stemming from your home location.  In other words, whoever makes a bigger area connected to their home piece is the winner.  Score an additional point for each hex that you control that is contiguous with your home piece.
 
-![Jar Image](http://i.imgur.com/uH8EXft.jpg) 
+<img src="http://i.imgur.com/uH8EXft.jpg" alt="mem jar pic" height="200px">
+
 
 ##How to Play
 
