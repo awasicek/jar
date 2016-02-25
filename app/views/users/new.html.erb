@@ -2,37 +2,37 @@
 <br>
 
 <%= form_for @user do |f| %>
-<div class="row"><legend class="col-md-4 col-md-offset-4">Create an Account for The Jar</legend></div>
+<div class="row"><legend class="col-md-4 col-md-offset-4">Create an Account for The Jar:</legend></div>
 <fieldset>
-      <div class="form-group">
+      <div class="form-group form-horizontal">
         <%= f.label :name, class: 'col-md-4 control-label'%>
-        <div class="col-md-5">
+        <div class="col-md-5" style="margin-bottom: 5px">
         <%= f.text_field :name, class: 'form-control'%>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group form-horizontal">
         <%= f.label :email, class: 'col-md-4 control-label' %>
-        <div class="col-md-5">
+        <div class="col-md-5" style="margin-bottom: 5px">
         <%= f.email_field :email, class: 'form-control' %>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group form-horizontal">
         <%= f.label :username, class: 'col-md-4 control-label' %>
-        <div class="col-md-5">
+        <div class="col-md-5" style="margin-bottom: 5px">
         <%= f.text_field :username, class: 'form-control' %>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group form-horizontal">
         <%= f.label :password, class: 'col-md-4 control-label'  %>
-        <div class="col-md-5">
+        <div class="col-md-5" style="margin-bottom: 5px">
         <%= f.password_field :password, class: 'form-control'  %>
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group form-horizontal">
 	      <div class="col-md-8 col-md-offset-4">
           <%= f.submit "Sign Up", class: 'btn btn-success' %>
         </div>
