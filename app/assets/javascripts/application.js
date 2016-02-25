@@ -17,14 +17,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-// var init = function(){
-//   $('#add-mem').click(function(){
-//     $('#myModal').modal()
-//   })
-// }
-//
-// $(document).ready(init)
-// $(document).on('page:load', init)
 $(function(){
   $('#add-mem').click(function(){
       $('#myModal').modal()
