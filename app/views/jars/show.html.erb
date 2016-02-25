@@ -19,7 +19,7 @@
         <h4 class="modal-title" id="myModalLabel">Create Memory</h4>
       </div>
       <div class="modal-body">
-        <%= form_tag create_mem_path(@jar) do %>
+        <%= form_tag create_mem_path(@jar), method: :post, multipart: true do %>
 
             <div>
                 <%= label_tag 'mem[body]', "Body" %>
