@@ -1,12 +1,12 @@
-<h1 style= "font-family: 'Gloria Hallelujah'">Create a new Jar.</h1>
+<h1 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Create a new Jar.</h1>
 
 <%= form_for @jar do |f| %>
 
     <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.label :name, :style => "margin-left: 20px;" %>
+        <%= f.text_field :name, :style => "margin-left: 20px;" %>
     </div>
 
-    <%= f.submit "Create!" %>
+    <%= f.submit "Create!", :style => "margin-left: 20px;" %>
 
 <% end %>
