@@ -1,7 +1,6 @@
-<h2 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> <%= @user.name %> </h2>
-<h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> <%= @user.username %> </h4>
-<h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> <%= @user.email %> </h4>
-<br>
+<h2 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> Name: <%= @user.name %> </h2>
+<h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> Username: <%= @user.username %> </h4>
+<h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px"> Email: <%= @user.email %> </h4>
 <br>
 <br>
 <%= link_to "Edit Account and Settings.", edit_user_path(@user), :style => "margin-left: 20px;", :class => 'btn btn-info' %>

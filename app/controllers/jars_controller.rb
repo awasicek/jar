@@ -67,7 +67,7 @@ class JarsController < ApplicationController
   def update
     @jar = Jar.find(params[:id])
     if @jar.update_attributes(params.require(:jar).permit(:name, :publicview))
-      redirect_to jars_path
+      redirect_to jar_path
     else
       render :edit
     end
