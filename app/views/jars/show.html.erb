@@ -47,7 +47,6 @@
 <!-- Memory form end-->
 
 <br>
-<br>
 <% if is_creator? %>
 <%= link_to "Edit Jar and Settings.", edit_jar_path(@jar), :style => "margin-left: 20px;", :class => 'btn btn-info'%>
 <br>
@@ -61,7 +60,7 @@
 <% @jar.mems.reverse.each do |u| %>
 <h4 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Memory: <%= u.body %></h4>
 <h5 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Date: <%= u.date %></h5>
-<h6 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Added by: <%= u.jar.user.name %></h6>
+<h6 style= "font-family: 'Gloria Hallelujah'; margin-left: 20px">Added by: <%= User.find(u.user_id).name %></h6>
 <%= image_tag u.photo.url(:medium), :style => "margin-left: 20px;" unless u.photo_file_name == nil%>
 <hr>
 <% end %>
