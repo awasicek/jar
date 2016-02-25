@@ -2,19 +2,19 @@
 
 The Jar is an app for storing your memories.  It is based on a physical jar that my wife and I created when our daughter was born.  Every so often we put an index card with 2-3 lines describing something that our daughter did that we want to remember or share with her when she is older.  This project is a virtual recreation of this concept.
 
-The Jar is a place where users can make their own jars to put memories in.  Users can create jars for different events, people, or relationships that they want to have a lasting place to store those memories.  Users can attach a picture to a memory.  
+The Jar is a place where users can make their own jars to put memories in.  Users can create jars for different events, people, or relationships and the jar will be a lasting place to store those memories.  Users can attach a picture to a memory.  
 
 Users can set their jars as private or public.  They can also add other users as contributors to the jar (or just allow specific users to view a jar).
 
 ##Example Uses:
 
-*Parents create a jar about their child that they put memories in each time their child does something cute.  
+* Parents create a jar about their child that they put memories in each time their child does something cute.  
 
-*A couple creates a jar for their wedding and invites all of their guests to contribute memories of the wedding to the jar.
+* A couple creates a jar for their wedding and invites all of their guests to contribute memories of the wedding to the jar.
 
-*A football coach creates a jar for his team's season and invites the players to contribute memories to the jar.
+* A football coach creates a jar for his team's season and invites the players to contribute memories to the jar.
 
-*A granddaughter creates a jar to which she adds memories of her grandmother and then shares the jar with her grandmother as a birthday present.
+* A granddaughter creates a jar to which she adds memories of her grandmother and then shares the jar with her grandmother as a birthday present.
 
 
 <img src="http://i.imgur.com/uH8EXft.jpg" alt="mem jar pic" height="200px">
