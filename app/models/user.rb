@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   #user relationship to memories
   has_many :mems, through: :jars
 
-  has_many :contributors
-  has_many :viewers
+  has_many :contributors, dependent: :destroy
+  has_many :viewers, dependent: :destroy
 
 end
