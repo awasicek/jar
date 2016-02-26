@@ -41,6 +41,7 @@ As a user, I want to share my jars with only the people that I choose.
 As a user, I want to enable select friends to contribute to certain jars that I create.
 
 ##Future Implementations
+* Add image hosting solution (e.g., Amazon S3)
 * Improve styling and animation of memories so it feels more like the user is filling out an actual note card and then it goes in the jar.  A jar's image should update periodically based on the number of memories in it to simulate it filling up.
 * Password reset via email.
 * Mobile-friendly.
