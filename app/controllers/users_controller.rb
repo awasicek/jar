@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if User.find(params[:id]) == current_user
+      @user = User.find(params[:id])
+    else
+      flash[:failure] = "You can only view your own account."
+      redirect_to home_path
+    end
   end
 
   def new
@@ -23,7 +28,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    if User.find(params[:id]) == current_user
+      @user = User.find(params[:id])
+    else
+      flash[:failure] = "You can only edit your own account."
+      redirect_to home_path
+    end
   end
 
   def update
@@ -37,8 +47,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_path
+    if User.find(params[:id]) == current_user
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to users_path
+    else
+      flash[:failure] = "You can only delete your own account."
+    end
   end
 end
