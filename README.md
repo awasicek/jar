@@ -57,6 +57,7 @@ As a user, I want to enable select friends to contribute to certain jars that I 
 * HTML
 * CSS
 * Bootstrap
+* PostgreSQL
 
 
 
