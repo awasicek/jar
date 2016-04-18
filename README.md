@@ -27,7 +27,7 @@ Users can set their jars as private or public.  They can also add other users as
 
 Sign up for an account on the site and then login.  Next, create a jar -- or several jars!  You can then edit the jar's privacy settings and add memories to the jar.  If you like, add other users as contributors or allow another user to view an otherwise private jar.
 
-Ready to make a jar and add some memories? Visit [the Jar](https://fierce-taiga-61470.herokuapp.com/) to get started! Have fun!
+Ready to make a jar and add some memories? Visit [the Jar](https://the-jar.herokuapp.com/) to get started! Have fun!
 
 ##User Stories
 As a user, I want a fun and intuitive way to store memories about certain subjects using my computer or mobile device.
